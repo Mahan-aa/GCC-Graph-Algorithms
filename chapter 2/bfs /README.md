@@ -13,11 +13,11 @@ State Representation: Each square on the board is treated as a node in the graph
 
 BFS Data Structures:
 
-std::deque<Point> queue: Stores the nodes to be explored, ensuring FIFO (First-In, First-Out) order to guarantee shortest path.
+`std::deque<Point> queue` Stores the nodes to be explored, ensuring FIFO (First-In, First-Out) order to guarantee shortest path.
 
-std::set<Point> visited: Tracks already processed nodes to prevent infinite loops and redundant work.
+`std::set<Point> visited` Tracks already processed nodes to prevent infinite loops and redundant work.
 
-std::map<Point, Point> parents: Used to store the predecessor of each node, enabling path reconstruction once the goal is found.
+`std::map<Point, Point> parents` Used to store the predecessor of each node, enabling path reconstruction once the goal is found.
 
 Movement Functions: Specific C++ functions (knightMoves, kingMoves, rookMoves, etc.) implement the legal moves for each chess piece. These functions handle boundary checks to ensure generated moves remain within the 8x8 grid. Sliding pieces (Rook, Bishop, Queen) generate multiple immediate neighbors in a single direction, unlike the King or Knight.
 
