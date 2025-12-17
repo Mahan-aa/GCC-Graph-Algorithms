@@ -18,6 +18,9 @@ long_end=None
 diameter=None
 long_start=None
 NODE_RADIUS = 15
+nodes = []
+nodes_dic={}
+edges = []
 
 selected_node = None
 
@@ -39,11 +42,10 @@ class Edge():
     def other_end(self,node): 
         if node == self.end : return self.start
         if node == self.start : return self.end
+
+    def include_node(self,node):
+        if node == self.end or node == self.start : return True
         return False
-
-
-nodes = List[Node]
-edges = List[Node]
 
 
 def reset_nodes(nodes:List[Node])->None:
@@ -168,7 +170,7 @@ def main():
             if event.type == pygame.KEYDOWN and event.key == pygame.K_DELETE:
                 if selected_node:
                     for edge in edges.copy():
-                        if edge.other_end(selected_node):
+                        if edge.include_node(selected_node):
                             edges.remove(edge)
                             del edge
                     nodes.remove(selected_node)
