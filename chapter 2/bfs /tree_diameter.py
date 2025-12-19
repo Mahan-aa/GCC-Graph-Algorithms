@@ -166,8 +166,9 @@ def main():
 
 
 
-            # removing selected node and all of it's edges by pressing r 
-            if event.type == pygame.KEYDOWN and event.key == pygame.K_DELETE:
+            # removing selected node and all of it's edges by pressing DELETE
+            if event.type == pygame.KEYDOWN and event.key in (pygame.K_BACKSPACE, pygame.K_DELETE):
+                print("DELETE")
                 if selected_node:
                     for edge in edges.copy():
                         if edge.include_node(selected_node):
@@ -176,7 +177,7 @@ def main():
                     nodes.remove(selected_node)
                     del selected_node
                     selected_node=None
-                    # count-=1
+
             
             if event.type == pygame.KEYDOWN and event.key == pygame.K_r:
                 long_end=None
