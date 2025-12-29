@@ -17,17 +17,6 @@ This repository is designed to:
 ---
 
 
-## 💻 Code Style
-
-All implementations follow these principles:
-
-* Clear variable naming
-* Step-by-step comments for understanding (i tried )
-* Separation of logic and visualization
-* Minimal dependencies
-
----
-
 ## 🚀 How to Run
 
 Each folder contains its own instructions.
